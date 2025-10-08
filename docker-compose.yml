@@ -2,7 +2,7 @@ services:
     mosquitto:
         container_name: mosquitto
         hostname: mosquitto
-        image: "4nxio/mosquitto:latest"
+        image: "eclipse-mosquitto:latest"  # Switched to official image
         restart: always
         tty: true
         environment:
@@ -14,19 +14,11 @@ services:
         networks:
             - dokploy-network
         volumes:
-            - "../files/etc/localtime:/etc/localtime:ro"
-            - "../files/etc/timezone:/etc/timezone:ro"
+            - "/etc/localtime:/etc/localtime:ro"
+            - "/etc/timezone:/etc/timezone:ro"
             - "../files/mosquitto-config:/opt/mosquitto/config"
             - "../files/mosquitto-data:/opt/mosquitto/data"
             - "../files/mosquitto-log:/opt/mosquitto/log"
-
-volumes:
-    mosquitto-config:
-        external: true
-    mosquitto-data:
-        external: true
-    mosquitto-log:
-        external: true
 
 networks:
     dokploy-network:
