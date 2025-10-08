@@ -14,11 +14,11 @@ services:
         networks:
             - dokploy-network
         volumes:
-            - "/etc/localtime:../etc/localtime:ro"
-            - "/etc/timezone:../etc/timezone:ro"
-            - "mosquitto-config:../opt/mosquitto/config"
-            - "mosquitto-data:../opt/mosquitto/data"
-            - "mosquitto-log:../opt/mosquitto/log"
+            - "/etc/localtime:../files/etc/localtime:ro"
+            - "/etc/timezone:../files/etc/timezone:ro"
+            - "mosquitto-config:../files/opt/mosquitto/config"
+            - "mosquitto-data:../files/opt/mosquitto/data"
+            - "mosquitto-log:../files/opt/mosquitto/log"
 
 volumes:
     mosquitto-config:
