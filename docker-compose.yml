@@ -14,8 +14,8 @@ services:
         networks:
             - dokploy-network
         volumes:
-            - "../etc/localtime:/etc/localtime:ro"
-            - "../etc/timezone:/etc/timezone:ro"
+            - "/etc/localtime:../etc/localtime:ro"
+            - "/etc/timezone:../etc/timezone:ro"
             - "mosquitto-config:../opt/mosquitto/config"
             - "mosquitto-data:../opt/mosquitto/data"
             - "mosquitto-log:../opt/mosquitto/log"
