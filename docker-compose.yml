@@ -16,9 +16,9 @@ services:
         volumes:
             - "../files/etc/localtime:/etc/localtime:ro"
             - "../files/etc/timezone:/etc/timezone:ro"
-            - "../filesmosquitto-config:/opt/mosquitto/config"
-            - "../filesmosquitto-data:/opt/mosquitto/data"
-            - "../filesmosquitto-log:/opt/mosquitto/log"
+            - "../files/mosquitto-config:/opt/mosquitto/config"
+            - "../files/mosquitto-data:/opt/mosquitto/data"
+            - "../files/mosquitto-log:/opt/mosquitto/log"
 
 volumes:
     mosquitto-config:
